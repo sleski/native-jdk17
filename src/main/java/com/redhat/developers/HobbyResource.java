@@ -9,8 +9,9 @@ import javax.ws.rs.core.MediaType;
 public class HobbyResource {
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String hello() {
-        return "Hello from RESTEasy Reactive";
+    @Produces(MediaType.APPLICATION_JSON)
+    public Object hello() {
+        record Country(String name,String capital){}
+        return new Country("Poland", "Warsaw");
     }
 }
